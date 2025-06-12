@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vídeo Educativo Acessível</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Senhas</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Aprenda com Vídeos Interativos</h1>
-  </header>
-
-  <main>
-    <section class="video-section">
-      <video controls poster="capa-video.jpg">
-        <source src="video-exemplo.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeos.
-      </video>
-      <div class="legenda-container">
-        <p class="legenda-texto">Essa é uma legenda acessível!</p>
-        <div class="botoes">
-          <button class="legenda-botao">A-</button>
-          <button class="legenda-botao">A+</button>
-        </div>
+  <div class="container">
+    <h1>🔐 Gerador de Senhas Seguras</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="cadeado" class="icon" />
+    <div class="output">
+      <input type="text" id="password" readonly />
+      <button id="copy">📋 Copiar</button>
+    </div>
+    <div class="controls">
+      <label for="length">Comprimento:</label>
+      <input type="range" id="length" min="6" max="32" value="12" />
+      <span id="length-value">12</span>
+      <div class="options">
+        <label><input type="checkbox" id="uppercase" checked /> Letras Maiúsculas</label>
+        <label><input type="checkbox" id="lowercase" checked /> Letras Minúsculas</label>
+        <label><input type="checkbox" id="numbers" checked /> Números</label>
+        <label><input type="checkbox" id="symbols" checked /> Símbolos</label>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 - Projeto Educativo</p>
-  </footer>
-
-  <script src="main.js"></script>
+      <button id="generate">🔄 Gerar Senha</button>
+    </div>
+  </div>
 </body>
 </html>
+

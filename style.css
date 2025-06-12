@@ -1,70 +1,80 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  background-color: #f3f7fa;
-  color: #333;
 }
 
-header {
-  background-color: #c20000;
-  color: white;
-  padding: 20px;
+.container {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  max-width: 400px;
   text-align: center;
 }
 
-main {
-  padding: 30px;
+.icon {
+  width: 60px;
+  margin: 10px 0;
+}
+
+.output {
   display: flex;
-  justify-content: center;
-}
-
-.video-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 100%;
-}
-
-video {
-  width: 100%;
-  border-radius: 8px;
   margin-bottom: 15px;
 }
 
-.legenda-container {
-  text-align: center;
-}
-
-.legenda-texto {
-  font-size: 16px;
-  margin-bottom: 10px;
-  background-color: #e8f0fe;
+#password {
+  flex: 1;
   padding: 10px;
-  border-radius: 8px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
 }
 
-.botoes button {
-  font-size: 16px;
-  padding: 8px 12px;
-  margin: 0 5px;
-  background-color: #ffffff;
+#copy {
+  padding: 10px 15px;
+  border: none;
+  background: #00c9a7;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.controls {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.options {
+  margin: 10px 0;
+}
+
+button#generate {
+  width: 100%;
+  background-color: #0077ff;
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.botoes button:hover {
-  background-color: #030001;
+button#generate:hover {
+  background-color: #005fdd;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #f1f1f1;
-  margin-top: 40px;
+#length-value {
+  font-weight: bold;
+  margin-left: 10px;
 }

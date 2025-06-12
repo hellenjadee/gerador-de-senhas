@@ -1,25 +1,49 @@
-const tamanhoTexto = document.querySelector(".legenda-texto");
-let tamanhoLegenda = 16;
+const passwordInput = document.getElementById("password");
+const lengthSlider = document.getElementById("length");
+const lengthValue = document.getElementById("length-value");
+const generateBtn = document.getElementById("generate");
+const copyBtn = document.getElementById("copy");
 
-const botoes = document.querySelectorAll(".legenda-botao");
+const uppercaseEl = document.getElementById("uppercase");
+const lowercaseEl = document.getElementById("lowercase");
+const numbersEl = document.getElementById("numbers");
+const symbolsEl = document.getElementById("symbols");
 
-botoes[0].onclick = diminuirLegenda;
-botoes[1].onclick = aumentarLegenda;
+const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lower = "abcdefghijklmnopqrstuvwxyz";
+const numbers = "0123456789";
+const symbols = "!@#$%^&*()-_=+[]{}<>?";
 
-function diminuirLegenda() {
-  if (tamanhoLegenda > 10) {
-    tamanhoLegenda--;
-    atualizarLegenda();
+lengthSlider.addEventListener("input", () => {
+  lengthValue.textContent = lengthSlider.value;
+});
+
+generateBtn.addEventListener("click", () => {
+  const length = parseInt(lengthSlider.value);
+  let chars = "";
+
+  if (uppercaseEl.checked) chars += upper;
+  if (lowercaseEl.checked) chars += lower;
+  if (numbersEl.checked) chars += numbers;
+  if (symbolsEl.checked) chars += symbols;
+
+  if (chars.length === 0) {
+    passwordInput.value = "Selecione pelo menos uma opção!";
+    return;
   }
-}
 
-function aumentarLegenda() {
-  if (tamanhoLegenda < 30) {
-    tamanhoLegenda++;
-    atualizarLegenda();
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    const random = Math.floor(Math.random() * chars.length);
+    password += chars[random];
   }
-}
 
-function atualizarLegenda() {
-  tamanhoTexto.style.fontSize = `${tamanhoLegenda}px`;
-}
+  passwordInput.value = password;
+});
+
+copyBtn.addEventListener("click", () => {
+  passwordInput.select();
+  document.execCommand("copy");
+  copyBtn.textContent = "✅ Copiado!";
+  setTimeout(() => (copyBtn.textContent = "📋 Copiar"), 1500);
+});
