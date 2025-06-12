@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #007acc;
+  background-color: #c20000;
   color: white;
   padding: 20px;
   text-align: center;
@@ -50,7 +50,7 @@ video {
   font-size: 16px;
   padding: 8px 12px;
   margin: 0 5px;
-  background-color: #007acc;
+  background-color: #ffffff;
   color: white;
   border: none;
   border-radius: 6px;
@@ -59,7 +59,7 @@ video {
 }
 
 .botoes button:hover {
-  background-color: #005ea6;
+  background-color: #030001;
 }
 
 footer {
