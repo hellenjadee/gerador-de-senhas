@@ -1,50 +1,95 @@
-// ====== TEMAS ======
-const temas = [
-  {
-    id: 1,
-    titulo: "Por que os procedimentos estéticos estão aumentando entre os jovens?",
-    texto: `Conteúdo completo do tema 1...`
-  },
-  {
-    id: 2,
-    titulo: "Acessibilidade e inclusão de pessoas com deficiência no Brasil",
-    texto: `Conteúdo completo do tema 2...`
-  },
-  { id: 3, titulo: "Principais fatores que influenciam na qualidade de vida e no bem-estar da população", texto: "" },
-  { id: 4, titulo: "As mudanças climáticas no Brasil e seus desafios", texto: "" },
-  { id: 5, titulo: "As consequências do descarte de lixo eletrônico", texto: "" },
-  { id: 6, titulo: "O consumo de ultraprocessados e suas consequências à saúde", texto: "" },
-  { id: 7, titulo: "Fatores e efeitos da dependência em jogos de apostas na web", texto: "" },
-  { id: 8, titulo: "A importância do trabalho voluntário no combate às desigualdades sociais", texto: "" },
-  { id: 9, titulo: "Adultização infantil – consequências da perda irreparável da infância", texto: "" },
-  { id: 10, titulo: "Caminhos para combater o etarismo nas relações sociais", texto: "" },
-  { id: 11, titulo: "A importância da educação financeira para os jovens", texto: "" },
-  { id: 12, titulo: "Desafios para a valorização da cultura popular brasileira", texto: "" },
-  { id: 13, titulo: "Caminhos para a universalização do saneamento básico no Brasil", texto: "" },
-  { id: 14, titulo: "O papel do esporte como ferramenta de transformação social", texto: "" }
+// Temas fixos (referência para validação)
+const TEMAS = [
+  "POR QUE OS PROCEDIMENTOS ESTÉTICOS ESTÃO AUMENTANDO ENTRE OS JOVENS?",
+  "ACESSIBILIDADE E INCLUSÃO DE PESSOAS COM DEFICIÊNCIA NO BRASIL",
+  "PRINCIPAIS FATORES QUE INFLUENCIAM NA QUALIDADE DE VIDA E NO BEM-ESTAR DA POPULAÇÃO",
+  "AS MUDANÇAS CLIMÁTICAS NO BRASIL E SEUS DESAFIOS",
+  "AS CONSEQUÊNCIAS DO DESCARTE DE LIXO ELETRÔNICO",
+  "O CONSUMO DE ULTRAPROCESSADOS E SUAS CONSEQUÊNCIAS À SAÚDE",
+  "FATORES E EFEITOS DA DEPENDÊNCIA EM JOGOS DE APOSTAS NA WEB",
+  "A IMPORTÂNCIA DO TRABALHO VOLUNTÁRIO NO COMBATE ÀS DESIGUALDADES SOCIAIS",
+  "ADULTIZAÇÃO INFANTIL – CONSEQUÊNCIAS DA PERDA IRREPARÁVEL DA INFÂNCIA",
+  "CAMINHOS PARA COMBATER O ETARISMO NAS RELAÇÕES SOCIAIS",
+  "A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA PARA OS JOVENS",
+  "DESAFIOS PARA A VALORIZAÇÃO DA CULTURA POPULAR BRASILEIRA",
+  "CAMINHOS PARA A UNIVERSALIZAÇÃO DO SANEAMENTO BÁSICO NO BRASIL",
+  "O PAPEL DO ESPORTE COMO FERRAMENTA DE TRANSFORMAÇÃO SOCIAL"
 ];
 
-// ELEMENTOS
-const lista = document.getElementById("temas-lista");
-const detalhe = document.getElementById("tema-detalhe");
-const titulo = document.getElementById("detalhe-titulo");
-const texto = document.getElementById("detalhe-texto");
-const voltarBtn = document.getElementById("btn-voltar");
+const btnAdicionar = document.getElementById("btnAdicionar");
+const modal = document.getElementById("modalRedacao");
+const btnCancelar = document.getElementById("btnCancelar");
+const formRedacao = document.getElementById("formRedacao");
+const containerRedacoes = document.getElementById("redacoesContainer");
 
-// ====== GERAR LISTA ======
-temas.forEach((t) => {
-  const div = document.createElement("div");
-  div.className = "tema";
-  div.innerHTML = `<strong>${t.id}</strong> ${t.titulo}`;
-  div.addEventListener("click", () => abrirTema(t));
-  lista.appendChild(div);
+// Abre modal
+btnAdicionar.addEventListener("click", () => {
+  modal.hidden = false;
+  formRedacao.reset();
+  formRedacao.temaNumero.focus();
 });
 
-// ====== ABRIR TEMA ======
-function abrirTema(t) {
-  document.querySelector(".container").style.display = "none";
-  detalhe.style.display = "block";
+// Fecha modal
+btnCancelar.addEventListener("click", () => {
+  modal.hidden = true;
+});
 
-  titulo.textContent = t.titulo;
-  texto.innerHTML = t.texto
-    ? t.texto.split("\n\n").map(p => `<p>${p}</p>`).join(""
+// Fecha modal se clicar fora do conteúdo
+modal.addEventListener("click", (e) => {
+  if(e.target === modal){
+    modal.hidden = true;
+  }
+});
+
+// Renderiza redação adicionada abaixo dos temas
+function criarRedacaoElement(numero, texto) {
+  const div = document.createElement("div");
+  div.className = "redacao-item";
+
+  const titulo = document.createElement("h3");
+  titulo.className = "redacao-titulo";
+  titulo.textContent = `Tema ${numero}: ${TEMAS[numero - 1] || "Tema desconhecido"}`;
+
+  const textoP = document.createElement("p");
+  textoP.textContent = texto;
+
+  div.appendChild(titulo);
+  div.appendChild(textoP);
+  return div;
+}
+
+formRedacao.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const numTema = Number(formRedacao.temaNumero.value);
+  const texto = formRedacao.textoRedacao.value.trim();
+
+  if (numTema < 1 || numTema > 14){
+    alert("Digite um número válido de tema entre 1 e 14.");
+    formRedacao.temaNumero.focus();
+    return;
+  }
+  if (texto.length < 20){
+    alert("Por favor, escreva uma redação com ao menos 20 caracteres.");
+    formRedacao.textoRedacao.focus();
+    return;
+  }
+
+  const novaRedacao = criarRedacaoElement(numTema, texto);
+
+  // Insere em ordem (por número do tema)
+  // Verifica se já existe redação do tema para substituir
+  const existentes = containerRedacoes.querySelectorAll(".redacao-item");
+  let substituido = false;
+  existentes.forEach(item => {
+    if(item.querySelector('h3').textContent.startsWith(`Tema ${numTema}:`)){
+      containerRedacoes.replaceChild(novaRedacao, item);
+      substituido = true;
+    }
+  });
+  if(!substituido){
+    containerRedacoes.appendChild(novaRedacao);
+  }
+
+  modal.hidden = true;
+});

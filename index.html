@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redações</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Redações - Encerramento do Ano Letivo</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="container">
 
-<div class="container">
-
-  <!-- LADO ESQUERDO -->
-  <div class="left">
-    <div>
-      <div class="logo-box">
-        <img src="logo-icon.png">
+    <aside class="left-panel" aria-label="Título e ícones decorativos">
+      <div class="icon-leaf" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="leaf-arc">
+          <path d="M20 70V20A30 30 0 0 1 50 50z" />
+          <path d="M37 40s-10-8-13-2c-1.7 3.2 2 8 5 8" />
+          <path d="M37 43s-3-2-3 2" />
+          <path d="M43 28s-6 3-7 8" />
+          <path d="M46 29s-6 5-5 7" />
+        </svg>
       </div>
+
       <h1>REDAÇÕES</h1>
       <p class="subtitle">ENCERRAMENTO DO ANO LETIVO</p>
-    </div>
 
-    <img src="graduation.png" class="graduation-img">
+      <div class="icon-hands" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M20 55L25 35L55 30" />
+          <path d="M45 55L40 35L10 30" />
+          <path d="M18 45L22 43L20 40" />
+          <path d="M42 45L38 43L40 40" />
+          <path d="M22 43L24 48" />
+          <path d="M38 43L36 48" />
+          <path d="M15 50L22 53L16 55" />
+          <path d="M45 53L38 50L44 55" />
+          <path d="M20 48L23 50" />
+          <path d="M40 48L37 50" />
+        </svg>
+      </div>
+    </aside>
+
+    <main class="right-panel" aria-label="Temas das redações">
+      <h2 class="temas-title">- Temas -</h2>
+      
+      <section class="temas-column" aria-label="Coluna 1"></section>
+      <section class="temas-column" aria-label="Coluna 2"></section>   
+
+      <button id="btnAdicionar" class="btn-adicionar" aria-haspopup="dialog" aria-controls="modalRedacao">Adicionar Redação</button>
+
+      <section id="redacoesContainer" aria-label="Redações adicionadas">
+        <!-- Redações aparecerão aqui -->
+      </section>
+
+    </main>
   </div>
 
-  <!-- LADO DIREITO -->
-  <div class="right">
-    <h2>Temas-
+  <!-- Modal de inserção -->
+  <div id="modalRedacao" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal-content">
+      <h3 id="modalTitulo">Adicionar Redação</h3>
+      <form id="formRedacao">
+        <label for="temaNumero">Número do Tema (1 a 14):</label>
+        <input type="number" id="temaNumero" name="temaNumero" min="1" max="14" required />
+
+        <label for="textoRedacao">Texto da Redação:</label>
+        <textarea id="textoRedacao" name="textoRedacao" rows="8" required></textarea>
+
+        <div class="modal-buttons">
+          <button type="submit" class="btn-salvar">Salvar</button>
+          <button type="button" id="btnCancelar" class="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>

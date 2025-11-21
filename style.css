@@ -1,122 +1,132 @@
-/* ====== ESTILOS GERAIS ====== */
-body {
-  margin: 0;
-  font-family: "Georgia", serif;
-  background: #000;
-  color: #fff;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-}
-
-/* ====== COLUNA ESQUERDA ====== */
-.left {
-  width: 45%;
-  background: #ffffff;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 3px solid #fff;
-}
-
-.logo-box img {
-  width: 120px;
-}
-
-h1 {
-  font-size: 40px;
-  letter-spacing: 6px;
-  margin-top: 10px;
-  font-weight: 300;
-}
-
-.subtitle {
-  letter-spacing: 6px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-.graduation-img {
-  width: 300px;
-  opacity: 0.9;
-}
-
-/* ====== COLUNA DIREITA: LISTA ====== */
-.right {
-  width: 55%;
-  padding: 40px 20px;
-}
-
-.right h2 {
-  font-size: 28px;
-  text-align: center;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-}
-
-/* GRID DE TEMAS */
-.temas-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  padding: 10px 20px;
-}
-
-/* CARD DO TEMA */
-.tema {
-  border: 2px solid #fff;
-  padding: 15px;
-  cursor: pointer;
-  transition: 0.3s;
+/* BOTÃO ADICIONAR REDAÇÃO */
+.btn-adicionar {
+  margin-top: 30px;
   background: transparent;
-}
-
-.tema:hover {
-  background: #ffffff10;
-}
-
-.tema strong {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-/* ====== DETALHE DO TEMA ====== */
-#tema-detalhe {
-  display: none;
-  padding: 50px;
-}
-
-#tema-detalhe h2 {
-  font-size: 32px;
-  letter-spacing: 2px;
-  text-align: left;
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-
-#tema-detalhe p {
-  line-height: 1.7;
-  font-size: 17px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-.voltar-btn {
-  background: none;
-  border: 2px solid #fff;
-  padding: 8px 14px;
+  color: white;
+  font-size: 14px;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 7px 14px;
   cursor: pointer;
-  color: #fff;
+  user-select: none;
+  transition: background-color 0.25s ease;
+}
+
+.btn-adicionar:hover,
+.btn-adicionar:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+}
+
+/* CONTAINER DE REDAÇÕES */
+#redacoesContainer {
+  margin-top: 40px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.redacao-item {
+  background: #222;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 25px;
+  white-space: pre-wrap;
+}
+
+.redacao-titulo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* MODAL DE INSERÇÃO */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px black;
+}
+
+.modal-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  user-select: none;
+}
+
+.modal-content input[type="number"],
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
   font-size: 15px;
-  margin-bottom: 30px;
-  transition: .3s;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  resize: vertical;
 }
 
-.voltar-btn:hover {
-  background: #fff;
-  color: #000;
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
+.btn-salvar, .btn-cancelar {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  border: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-salvar {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn-salvar:hover, .btn-salvar:focus {
+  background-color: #524bcc;
+  outline: none;
+}
+
+.btn-cancelar {
+  background-color: #444;
+  color: white;
+}
+
+.btn-cancelar:hover, .btn-cancelar:focus {
+  background-color: #666;
+  outline: none;
+}
