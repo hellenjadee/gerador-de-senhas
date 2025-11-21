@@ -1,41 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redações</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redações - Encerramento do Ano Letivo</title>
+    <meta name="description" content="Temas de redação para o encerramento do ano letivo - explore os principais tópicos sociais e contemporâneos" />
+    <meta name="author" content="Redações Acadêmicas" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-<body>
+    <meta property="og:title" content="Redações - Encerramento do Ano Letivo" />
+    <meta property="og:description" content="Temas de redação para o encerramento do ano letivo" />
+    <meta property="og:type" content="website" />
 
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="icon-box">
-      <img src="logo-icon.png" class="logo-img" />
-    </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Redações - Encerramento do Ano Letivo" />
+  </head>
 
-    <div>
-      <h1 class="title">REDAÇÕES</h1>
-      <p class="subtitle">ENCERRAMENTO DO ANO LETIVO</p>
-    </div>
-  </header>
-
-  <!-- Lista de temas -->
-  <main id="themes-list" class="themes-list"></main>
-
-  <!-- Página do tema -->
-  <section id="theme-detail" class="theme-detail hidden">
-    <button id="back-btn" class="back-btn">← Voltar aos temas</button>
-
-    <div class="theme-header">
-      <span id="theme-number" class="theme-number"></span>
-      <h2 id="theme-title" class="theme-title"></h2>
-    </div>
-
-    <div id="theme-content" class="theme-content"></div>
-  </section>
-
-  <script src="main.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
