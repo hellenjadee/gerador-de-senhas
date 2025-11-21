@@ -14,7 +14,7 @@ body {
 /* ====== COLUNA ESQUERDA ====== */
 .left {
   width: 45%;
-  background: #000;
+  background: #ffffff;
   padding: 60px;
   display: flex;
   flex-direction: column;
