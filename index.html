@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz Pessoal sobre IA</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Cozinha Folhada</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Quiz Pessoal: Você e a Inteligência Artificial</h1>
-    <div id="quiz">
-      <div id="question-container"></div>
-      <div id="answers-container"></div>
-      <button id="next-btn">Próxima</button>
-    </div>
-    <div id="result-container" style="display: none;">
-      <h2>Obrigado por responder!</h2>
-      <p>Suas opiniões sobre IA foram registradas. 😉</p>
-    </div>
-  </div>
-  <script src="main.js"></script>
+
+    <header class="hero">
+        <img class="hero-img" src="/mnt/data/Site para Link na Bio Alimentação e Restaurante Quente Orgânico Verde (1).png" alt="A Cozinha Folhada">
+    </header>
+
+    <nav class="menu">
+        <button onclick="goTo('luta')">Nossa luta</button>
+        <button onclick="goTo('cardapio')">Cardápio</button>
+        <button onclick="goTo('pratos')">Pratos da estação</button>
+        <button onclick="goTo('faq')">FAQ de delivery</button>
+        <button onclick="goTo('sobre')">Sobre nós</button>
+    </nav>
+
+    <main>
+        <section id="luta" class="secao">
+            <h2>Nossa luta</h2>
+            <p>Texto explicando a missão e propósito da marca...</p>
+        </section>
+
+        <section id="cardapio" class="secao">
+            <h2>Cardápio</h2>
+            <p>Descrição do cardápio...</p>
+        </section>
+
+        <section id="pratos" class="secao">
+            <h2>Pratos da estação</h2>
+            <p>Detalhes sobre pratos sazonais...</p>
+        </section>
+
+        <section id="faq" class="secao">
+            <h2>FAQ de delivery</h2>
+            <p>Perguntas mais frequentes...</p>
+        </section>
+
+        <section id="sobre" class="secao">
+            <h2>Sobre nós</h2>
+            <p>Informações sobre a empresa...</p>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
 </body>
 </html>
