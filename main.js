@@ -1,16 +1,10 @@
-// Script para links clicáveis que direcionem a outras seções (exemplo smooth scroll)
+// main.js
+// Preparado para futuras funcionalidades
 
-document.querySelectorAll('.button-panel a').forEach(link => {
-    link.addEventListener('click', event => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Se não existir o ID, redirecione para outra URL
-            // Exemplo: window.location.href = 'pagina.html';
-            console.log(`Seção "${targetId}" não encontrada.`);
-        }
+// Exemplo: destacar tema clicado (sem impacto real aqui pois tema1 usa link)
+document.querySelectorAll('.theme-box').forEach(box => {
+    box.addEventListener('click', () => {
+        document.querySelectorAll('.theme-box').forEach(b => b.classList.remove('active'));
+        box.classList.add('active');
     });
 });

@@ -6,140 +6,207 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
-    background-color: #d7dbce; /* tom verde pastel claro */
-    color: #3B3B3B;
-    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Times New Roman', serif;
     display: flex;
-    align-items: center;
     justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
 }
 
-/* Container geral - layout horizontal */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    height: 600px;
+    max-width: 1100px;
+    width: 100%;
     display: flex;
-    background-color: transparent;
+    gap: 80px;
     align-items: center;
-    gap: 50px;
-    box-shadow: inset 0 0 40px 20px rgba(0,0,0,0.03); /* leve sombra para efeito de folhas */
-    padding: 40px;
-    user-select: none;
 }
 
-/* Lado esquerdo (logo + texto) */
-.left-side {
-    flex: 1;
+.left {
+    flex: 1.1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo {
-    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 40px;
 }
 
-/* Ícone do logo personalizado */
-.logo-icon {
-    width: 100px;
-    height: 150px;
+.logo-box {
+    width: 120px;
+    height: 180px;
 }
 
-/* Texto do logo */
-.logo-text h1 {
+.logo-svg {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 42px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.subtitle {
     font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 1.3;
-    letter-spacing: 3px;
-    font-family: 'Didot', serif;
-    text-transform: uppercase;
-    max-width: 280px;
-    color: #3B3B3B;
+    font-size: 12px;
+    letter-spacing: 8px;
+    text-align: center;
+    color: #ccc;
+    margin-top: -5px;
 }
 
-.logo-text p {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    max-width: 280px;
-    margin-top: 20px;
+.hands {
+    width: 180px;
+    height: 140px;
 }
 
-/* Lado direito - duas colunas de botões */
-.right-side {
-    flex: 1.5;
+.hands-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.right {
+    flex: 2;
     display: flex;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: relative;
 }
 
-/* Cada painel de botões */
-.button-panel {
-    background-color: #efece5;
-    border-radius: 10px;
-    padding: 20px;
-    width: 220px;
-    box-shadow: 0 0 10px rgb(190 190 190 / 0.4);
+.themes-title {
+    width: 100%;
+    color: #ddd;
+    font-family: 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    user-select: none;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+}
+
+.column {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
+    flex: 1;
+    max-width: 400px;
 }
 
-/* Botões - links estilizados */
-.button-panel a {
+.theme-box {
+    background-color: #fff;
+    color: #000;
+    padding: 18px 22px;
+    border: 1px solid #999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Times New Roman', serif;
+    user-select: none;
+    cursor: default;
+    position: relative;
+    border-radius: 3px;
+}
+
+.theme-number {
+    font-weight: 700;
+    position: absolute;
+    left: 12px;
+    top: 18px;
+    font-family: 'Times New Roman', serif;
+    color: #444;
+}
+
+.theme-link {
+    color: #000;
     text-decoration: none;
-    border: 1px solid #bebead;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 1rem;
-    color: #3B3B3B;
-    text-align: center;
-    transition: all 0.3s ease;
-    font-family: 'Georgia', serif;
+    display: block;
+    font-family: 'Times New Roman', serif;
+}
+.theme-link:hover, .theme-link:focus {
+    text-decoration: underline;
+    outline: none;
 }
 
-.button-panel a:hover {
-    background-color: #d7dbce;
-    border-color: #9ca08a;
-    cursor: pointer;
-}
-
-/* Para evitar que link selecione e foco estranho */
-.button-panel a:focus {
-    outline: 2px solid #9ca08a;
-}
-
-/* Responsividade simples */
-@media (max-width: 960px) {
+@media (max-width: 900px) {
     .container {
         flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 30px;
+        align-items: center;
+        gap: 40px;
     }
-
-    .left-side, .right-side {
+    .left {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .right {
+        flex-direction: column;
         width: 100%;
     }
-
-    .right-side {
-        flex-direction: column;
-        align-items: center;
+    .column {
+        max-width: 100%;
+        width: 100%;
     }
-
-    .button-panel {
-        width: 80%;
-        max-width: 320px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
+    .themes-title {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 15px;
     }
+}
 
-    .button-panel a {
-        flex: 1 1 48%;
-    }
+/* Estilos para tema1.html (página individual do tema 1) */
+body.tema1 {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Times New Roman', serif;
+    margin: 40px 20px;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.tema1 .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tema1 h1 {
+    font-weight: 300;
+    font-size: 36px;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+}
+
+.tema1 p {
+    background-color: #111;
+    padding: 18px 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #ddd;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.tema1 a.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.tema1 a.back-link:hover, .tema1 a.back-link:focus {
+    background-color: #fff;
+    color: #000;
+    outline: none;
 }
