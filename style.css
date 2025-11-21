@@ -1,79 +1,122 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 3%;
-    --foreground: 40 15% 95%;
-
-    --card: 40 20% 95%;
-    --card-foreground: 0 0% 10%;
-
-    --popover: 40 20% 95%;
-    --popover-foreground: 0 0% 10%;
-
-    --primary: 140 45% 45%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 40 15% 85%;
-    --secondary-foreground: 0 0% 10%;
-
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 45 85% 65%;
-    --accent-foreground: 0 0% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 140 45% 45%;
-
-    --radius: 0.5rem;
-    
-    /* Custom design tokens */
-    --deep-black: 0 0% 3%;
-    --cream: 40 20% 95%;
-    --warm-gold: 45 85% 65%;
-    --botanical-green: 140 45% 45%;
-    
-    /* Shadows and effects */
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-    --glow-effect: 0 0 20px rgba(140, 180, 140, 0.3);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .dark {
-    /* Dark mode uses same values since design is already dark */
-    --background: 0 0% 3%;
-    --foreground: 40 15% 95%;
-  }
+/* ====== ESTILOS GERAIS ====== */
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #000;
+  color: #fff;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-  }
+.container {
+  display: flex;
+  height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* ====== COLUNA ESQUERDA ====== */
+.left {
+  width: 45%;
+  background: #000;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 3px solid #fff;
 }
+
+.logo-box img {
+  width: 120px;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 6px;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.subtitle {
+  letter-spacing: 6px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.graduation-img {
+  width: 300px;
+  opacity: 0.9;
+}
+
+/* ====== COLUNA DIREITA: LISTA ====== */
+.right {
+  width: 55%;
+  padding: 40px 20px;
+}
+
+.right h2 {
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+/* GRID DE TEMAS */
+.temas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding: 10px 20px;
+}
+
+/* CARD DO TEMA */
+.tema {
+  border: 2px solid #fff;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.tema:hover {
+  background: #ffffff10;
+}
+
+.tema strong {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* ====== DETALHE DO TEMA ====== */
+#tema-detalhe {
+  display: none;
+  padding: 50px;
+}
+
+#tema-detalhe h2 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+#tema-detalhe p {
+  line-height: 1.7;
+  font-size: 17px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.voltar-btn {
+  background: none;
+  border: 2px solid #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 30px;
+  transition: .3s;
+}
+
+.voltar-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
