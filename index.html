@@ -7,58 +7,73 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <section class="left-side">
-    <div class="logo">
-      <svg width="64" height="90" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <rect x="1" y="1" width="22" height="32" rx="11" stroke="white" stroke-width="1.2"/>
-        <path d="M9 20C9 20 13.5 19 14 16C15 9 9 10 9 10" stroke="white" stroke-width="1.2"/>
-        <path d="M14 23.5C14 23.5 15 10 15 8.5C15 7 15 5 9.5 8C9.5 8 6 9 6 15.9" stroke="white" stroke-width="1.2"/>
-      </svg>
-    </div>
-    <div class="title">
-      <h1>REDACÕES</h1>
-      <p>ENCERRAMENTO DO ANO LETIVO</p>
-    </div>
-    <div class="graduation-hats" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 50" class="hat">
-        <path d="M32 2 2 26 32 50 62 26Z" stroke="white" stroke-width="1.5" fill="none"/>
-        <line x1="32" y1="2" x2="32" y2="50" stroke="white" stroke-width="1.5"/>
-        <path d="M32 26L48 35" stroke="white" stroke-width="1.5"/>
-        <path d="M48 35L48 43" stroke="white" stroke-width="1.5"/>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 50" class="hat">
-        <path d="M32 2 2 26 32 50 62 26Z" stroke="white" stroke-width="1.5" fill="none"/>
-        <line x1="32" y1="2" x2="32" y2="50" stroke="white" stroke-width="1.5"/>
-        <path d="M32 26L48 35" stroke="white" stroke-width="1.5"/>
-        <path d="M48 35L48 43" stroke="white" stroke-width="1.5"/>
-      </svg>
-    </div>
-  </section>
-
-  <section class="right-side">
-    <h2 class="header">Temas-</h2>
-    <div class="columns">
-      <div class="column" id="col1">
-        <div class="item"><span>1</span> POR QUE OS PROCEDIMENTOS ESTÉTICOS ESTÃO AUMENTANDO ENTRE OS JOVENS?</div>
-        <div class="item"><span>2</span> ACESSIBILIDADE E INCLUSÃO DE PESSOAS COM DEFICIÊNCIA NO BRASIL</div>
-        <div class="item"><span>3</span> PRINCIPAIS FATORES QUE INFLUENCIAM NA QUALIDADE DE VIDA E NO BEM-ESTAR DA POPULAÇÃO</div>
-        <div class="item"><span>4</span> AS MUDANÇAS CLIMÁTICAS NO BRASIL E SEUS DESAFIOS</div>
-        <div class="item"><span>5</span> AS CONSEQUÊNCIAS DO DESCARTE DE LIXO ELETRÔNICO</div>
-        <div class="item"><span>6</span> O CONSUMO DE ULTRAPROCESSADOS E SUAS CONSEQUÊNCIAS À SAÚDE</div>
-        <div class="item"><span>7</span> FATORES E EFEITOS DA DEPENDÊNCIA EM JOGOS DE APOSTAS NA WEB</div>
+  <div class="container">
+    <section class="left" id="leftPanel">
+      <div class="initial-content" id="initialContent">
+        <div class="icon" aria-label="Ícone de planta">
+          <svg viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 33L12 1" />
+            <path d="M12 1C15 5 19 15 13 21C9 17 8 7 12 1Z" />
+            <path d="M8 15L16 25" />
+            <path d="M14 14L8 21" />
+          </svg>
+        </div>
+        <div class="title">
+          <h1>REDACÕES</h1>
+          <div class="subtitle">ENCERRAMENTO DO ANO LETIVO</div>
+        </div>
+        <div class="graduation">
+          <svg viewBox="0 0 64 50" xmlns="http://www.w3.org/2000/svg" class="hat">
+            <path d="M2 26 L32 2 L62 26 L32 50 Z" />
+            <line x1="32" y1="2" x2="32" y2="50" />
+            <path d="M32 26 L48 35" />
+            <path d="M48 35 L48 43" />
+          </svg>
+          <svg viewBox="0 0 64 50" xmlns="http://www.w3.org/2000/svg" class="hat">
+            <path d="M2 26 L32 2 L62 26 L32 50 Z" />
+            <line x1="32" y1="2" x2="32" y2="50" />
+            <path d="M32 26 L48 35" />
+            <path d="M48 35 L48 43" />
+          </svg>
+          <svg viewBox="0 0 64 50" xmlns="http://www.w3.org/2000/svg" class="hat">
+            <path d="M2 26 L32 2 L62 26 L32 50 Z" />
+            <line x1="32" y1="2" x2="32" y2="50" />
+            <path d="M32 26 L48 35" />
+            <path d="M48 35 L48 43" />
+          </svg>
+        </div>
       </div>
-      <div class="column" id="col2">
-        <div class="item"><span>8</span> A IMPORTÂNCIA DO TRABALHO VOLUNTÁRIO NO COMBATE ÀS DESIGUALDADES SOCIAIS</div>
-        <div class="item"><span>9</span> ADULTIZAÇÃO INFANTIL – CONSEQUÊNCIAS DA PERDA IRREPARÁVEL DA INFÂNCIA</div>
-        <div class="item"><span>10</span> CAMINHOS PARA COMBATER O ETARISMO NAS RELAÇÕES SOCIAIS</div>
-        <div class="item"><span>11</span> A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA PARA OS JOVENS</div>
-        <div class="item"><span>12</span> DESAFIOS PARA A VALORIZAÇÃO DA CULTURA POPULAR BRASILEIRA</div>
-        <div class="item"><span>13</span> CAMINHOS PARA A UNIVERSALIZAÇÃO DO SANEAMENTO BÁSICO NO BRASIL</div>
-        <div class="item"><span>14</span> O PAPEL DO ESPORTE COMO FERRAMENTA DE TRANSFORMAÇÃO SOCIAL</div>
+      <div class="redacao-container" id="redacaoContainer" style="display:none;">
+        <h1 id="redacaoTitle"></h1>
+        <article id="redacaoContent"></article>
+        <button id="btnBack" class="back">← Voltar para Temas</button>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="right">
+      <h2 class="header">Temas-</h2>
+      <div class="columns">
+        <div class="column">
+          <div class="item" data-id="1"><span>1</span> POR QUE OS PROCEDIMENTOS ESTÉTICOS ESTÃO AUMENTANDO ENTRE OS JOVENS?</div>
+          <div class="item" data-id="2"><span>2</span> ACESSIBILIDADE E INCLUSÃO DE PESSOAS COM DEFICIÊNCIA NO BRASIL</div>
+          <div class="item" data-id="3"><span>3</span> PRINCIPAIS FATORES QUE INFLUENCIAM NA QUALIDADE DE VIDA E NO BEM-ESTAR DA POPULAÇÃO</div>
+          <div class="item" data-id="4"><span>4</span> AS MUDANÇAS CLIMÁTICAS NO BRASIL E SEUS DESAFIOS</div>
+          <div class="item" data-id="5"><span>5</span> AS CONSEQUÊNCIAS DO DESCARTE DE LIXO ELETRÔNICO</div>
+          <div class="item" data-id="6"><span>6</span> O CONSUMO DE ULTRAPROCESSADOS E SUAS CONSEQUÊNCIAS À SAÚDE</div>
+          <div class="item" data-id="7"><span>7</span> FATORES E EFEITOS DA DEPENDÊNCIA EM JOGOS DE APOSTAS NA WEB</div>
+        </div>
+        <div class="column">
+          <div class="item" data-id="8"><span>8</span> A IMPORTÂNCIA DO TRABALHO VOLUNTÁRIO NO COMBATE ÀS DESIGUALDADES SOCIAIS</div>
+          <div class="item" data-id="9"><span>9</span> ADULTIZAÇÃO INFANTIL – CONSEQUÊNCIAS DA PERDA IRREPARÁVEL DA INFÂNCIA</div>
+          <div class="item" data-id="10"><span>10</span> CAMINHOS PARA COMBATER O ETARISMO NAS RELAÇÕES SOCIAIS</div>
+          <div class="item" data-id="11"><span>11</span> A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA PARA OS JOVENS</div>
+          <div class="item" data-id="12"><span>12</span> DESAFIOS PARA A VALORIZAÇÃO DA CULTURA POPULAR BRASILEIRA</div>
+          <div class="item" data-id="13"><span>13</span> CAMINHOS PARA A UNIVERSALIZAÇÃO DO SANEAMENTO BÁSICO NO BRASIL</div>
+          <div class="item" data-id="14"><span>14</span> O PAPEL DO ESPORTE COMO FERRAMENTA DE TRANSFORMAÇÃO SOCIAL</div>
+        </div>
+      </div>
+    </section>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
